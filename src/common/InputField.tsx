@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 export interface IComponentProps {
     description?: string;
     placeholder?: string;
+    handleChange?: Function;
 }
 
 export interface IField {
     description: string;
 }
 
-const InputField: React.FC<IComponentProps> = (props) => {
+const InputField: React.FC<IComponentProps> = props => {
     const [form, setDescription] = useState<IField>({
         description: props.description || ''
     });
@@ -19,6 +20,7 @@ const InputField: React.FC<IComponentProps> = (props) => {
             ...form,
             description: value,
         });
+        if (props.handleChange) props.handleChange(value);
     };
 
     return (

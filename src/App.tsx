@@ -1,21 +1,17 @@
 import React from 'react';
 import Header from './components/Header';
-import InputField from './common/InputField';
 
 import './App.scss';
+import CreateStatement from './components/CreateStatement';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <div className="container-fluid">
         <Header />
-        <div className="row">
-          <div className="col">
-            <form className="form">
-              <div className="form-group">
-                <InputField />
-              </div>
-            </form>
+        <div className="row justify-content-md-center">
+          <div className="col col-lg-6">
+            <CreateStatement />
           </div>
         </div>
       </div>
